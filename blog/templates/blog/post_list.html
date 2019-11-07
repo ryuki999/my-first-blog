@@ -13,10 +13,19 @@
         </div>
 
         <div>
-            <p>公開日: 2019/09/14, 00:00</p></div>
+            <p>公開日: 2019/09/14, 00:00</p>
             <h2><a href="">2番目の投稿</a></h2>
             <p>こんにちは！よろしくお願いします！</p>
-    <p>Hi there!</p>
-    <p>It works!</p>
+        </div>
+
+        {% for post in posts %}
+        <hr>
+        <div>
+            <p>published: {{ post.published_date}}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <!--|linebreaksbr postのテキスト中の改行を段落に変換するフィルタに通すという意味-->>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
     </body>
 </html>
