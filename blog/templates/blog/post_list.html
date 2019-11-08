@@ -1,6 +1,12 @@
+{% load static %}
 <html>
     <head>
         <title>Ryuki's blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
     </head>
     <body>
         <div>
@@ -23,7 +29,7 @@
         <div>
             <p>published: {{ post.published_date}}</p>
             <h2><a href="">{{ post.title }}</a></h2>
-            <!--|linebreaksbr postのテキスト中の改行を段落に変換するフィルタに通すという意味-->>
+            <!--|linebreaksbr postのテキスト中の改行を段落に変換するフィルタに通すという意味-->
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
         {% endfor %}
